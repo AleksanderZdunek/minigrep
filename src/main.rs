@@ -6,9 +6,9 @@
 fn main() {
     println!("Rust book chapter 12 minigrep");
 
-    let args: Vec<String> = std::env::args().collect();
+    //let args: Vec<String> = std::env::args().collect();
     //println!("{:?}", args);
-    let config = minigrep::Config::new(&args).unwrap_or_else(|err| {
+    let config = minigrep::Config::new(std::env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {}", err);
         std::process::exit(1);
     });
